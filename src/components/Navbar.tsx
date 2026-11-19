@@ -7,7 +7,7 @@ import { useActiveSection, useScrolled } from '../hooks/useUiState'
 import { MobileMenu } from './MobileMenu'
 import { ThemeToggle } from './ThemeToggle'
 
-const SECTION_IDS = ['about', 'work', 'experience', 'contact']
+const SECTION_IDS = navItems.map((item) => item.href.slice(1))
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -79,7 +79,7 @@ export function Navbar() {
             </span>
           </Link>
 
-          <nav aria-label="Primary navigation" className="hidden items-center gap-1 md:flex">
+          <nav aria-label="Primary navigation" className="hidden items-center gap-0.5 lg:flex">
             {navItems.map((item) => {
               const id = item.href.slice(1)
               const isActive = isHome && activeSection === id
@@ -92,7 +92,7 @@ export function Navbar() {
                     scrollToSection(item.href)
                   }}
                   aria-current={isActive ? 'location' : undefined}
-                  className={`group flex items-center gap-2 px-3.5 py-2 text-[0.66rem] font-medium uppercase tracking-[0.15em] transition-colors duration-300 ${
+                  className={`group flex items-center gap-1.5 px-2.5 py-2 text-[0.62rem] font-medium uppercase tracking-[0.12em] transition-colors duration-300 ${
                     isActive ? 'text-ink' : 'text-muted hover:text-ink'
                   }`}
                 >
@@ -125,7 +125,7 @@ export function Navbar() {
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              className="grid h-9 w-9 place-items-center border border-rule text-ink transition-colors hover:bg-surface md:hidden"
+              className="grid h-9 w-9 place-items-center border border-rule text-ink transition-colors hover:bg-surface lg:hidden"
             >
               {menuOpen ? (
                 <X size={16} strokeWidth={1.5} aria-hidden="true" />

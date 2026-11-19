@@ -22,8 +22,10 @@ export const profile = {
 } as const
 
 export const navItems = [
+  { label: 'Home', href: '#top' },
   { label: 'About', href: '#about' },
   { label: 'Work', href: '#work' },
+  { label: 'Toolkit', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ] as const

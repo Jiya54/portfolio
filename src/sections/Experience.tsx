@@ -1,86 +1,82 @@
 import { ArrowUpRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Reveal } from '../components/Reveal'
 import { SectionHeading } from '../components/SectionHeading'
-import { timeline } from '../data/experience'
 import { profile } from '../data/profile'
+
+const highlights = [
+  {
+    label: 'Experience',
+    title: 'Java Spring Boot Intern',
+    organization: 'Linsys Innovations',
+    detail: 'June 2026 – June 2026',
+    description: 'Contributed to backend development and REST API development using Java and Spring Boot.',
+  },
+  {
+    label: 'Education',
+    title: 'B.Tech in Computer Science and Engineering',
+    organization: 'Model Engineering College, Kochi',
+    detail: `CGPA: ${profile.cgpa}/10`,
+  },
+  {
+    label: 'Recognition',
+    title: 'Finalist — Tink-Her-Hack 4.0',
+    link: '/work/claimsafe',
+  },
+]
 
 export function Experience() {
   return (
-    <section id="experience" className="section scroll-mt-20">
+    <section id="experience" className="home-section scroll-mt-24">
       <div className="shell">
         <Reveal>
           <SectionHeading
-            index="03"
-            label="Experience"
-            aside="Internship / education"
+            index="05"
+            label="Experience, education & recognition"
+            aside="A brief record"
+            compact
             title={
               <>
-                Where I&apos;ve <span className="display-italic text-accent">been.</span>
+                The <span className="display-italic text-accent">record.</span>
               </>
             }
-            lead="A backend internship working on patient history and medicine billing workflows, alongside a Computer Science degree that keeps the fundamentals close."
           />
         </Reveal>
 
-        <div className="mt-14 border-t border-rule md:mt-20">
-          {timeline.map((entry, index) => (
-            <Reveal key={`${entry.period}-${entry.title}`} delay={index * 0.06}>
-              <article className="group grid grid-cols-12 gap-x-6 gap-y-6 border-b border-rule py-9 transition-colors duration-300 md:py-12">
-                <div className="col-span-12 md:col-span-3">
-                  <p className="display text-[2rem] leading-none text-ink md:text-[2.15rem]">
-                    {entry.period}
+        <div className="mt-8 grid grid-cols-1 border-t border-rule md:mt-10 md:grid-cols-3 md:gap-x-8">
+          {highlights.map((item, index) => (
+            <Reveal key={item.label} delay={index * 0.05}>
+              <article className="border-b border-rule py-5 md:min-h-44">
+                <p className="eyebrow">{item.label}</p>
+                <h3 className="mt-3 font-display text-[1.4rem] leading-tight text-ink">
+                  {item.title}
+                </h3>
+                {item.organization ? (
+                  <p className="mt-2 text-[0.8rem] text-accent">{item.organization}</p>
+                ) : null}
+                {item.detail ? (
+                  <p className="mt-2 text-[0.68rem] uppercase tracking-[0.08em] text-muted">
+                    {item.detail}
                   </p>
-                  <p className="mt-2.5 flex items-center gap-2 text-[0.64rem] uppercase tracking-[0.15em] text-muted">
-                    {entry.current ? (
-                      <span className="status-dot status-dot-pulse" aria-hidden="true" />
-                    ) : null}
-                    {entry.context}
+                ) : null}
+                {item.description ? (
+                  <p className="mt-3 max-w-[38ch] text-[0.76rem] leading-relaxed text-muted">
+                    {item.description}
                   </p>
-                </div>
-
-                <div className="col-span-12 md:col-span-4">
-                  <h3 className="text-[1.05rem] font-medium leading-snug text-ink">{entry.title}</h3>
-                  <p className="mt-1.5 font-display text-[1.35rem] leading-tight text-accent">
-                    {entry.organisation}
-                  </p>
-                </div>
-
-                <div className="col-span-12 md:col-span-5">
-                  <ul className="space-y-2.5">
-                    {entry.bullets.map((bullet) => (
-                      <li key={bullet} className="flex gap-3 text-[0.82rem] leading-relaxed text-muted">
-                        <span className="mt-[0.65rem] h-px w-3 shrink-0 bg-rule" aria-hidden="true" />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <ul className="mt-5 flex flex-wrap gap-x-3 gap-y-2">
-                    {entry.meta.map((item) => (
-                      <li key={item}>
-                        <span className="tag">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                ) : null}
+                {item.link ? (
+                  <Link
+                    to={item.link}
+                    className="group mt-3 inline-flex items-center gap-1 text-[0.62rem] uppercase tracking-[0.1em] text-muted transition-colors hover:text-accent"
+                  >
+                    ClaimSafe case study
+                    <ArrowUpRight size={11} className="arrow" aria-hidden="true" />
+                  </Link>
+                ) : null}
               </article>
             </Reveal>
           ))}
         </div>
-
-        <Reveal>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="eyebrow">Kochi, Kerala — India</p>
-            <a
-              href={profile.resume}
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex items-center gap-1.5 text-[0.68rem] font-medium uppercase tracking-[0.12em] text-ink transition-colors hover:text-accent"
-            >
-              <span className="link-underline">Download full résumé</span>
-              <ArrowUpRight size={13} strokeWidth={1.6} className="arrow" aria-hidden="true" />
-            </a>
-          </div>
-        </Reveal>
       </div>
     </section>
   )

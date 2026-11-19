@@ -26,7 +26,7 @@ export function Hero() {
   const time = useLocalTime(profile.timezone)
 
   return (
-    <section id="top" className="relative overflow-hidden pt-[6.4rem] md:pt-[8.5rem]">
+    <section id="top" className="relative overflow-hidden pt-[5.5rem] md:pt-[6.25rem]">
       <div
         className="pointer-events-none absolute -right-[12%] -top-[18%] hidden h-[48vw] w-[48vw] max-h-[680px] max-w-[680px] rounded-full border border-rule/70 lg:block"
         style={{ maskImage: 'linear-gradient(to bottom, black 40%, transparent 92%)' }}
@@ -54,13 +54,13 @@ export function Hero() {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-12 items-start gap-x-6">
-          <div className="col-span-12 lg:col-span-9">
+        <div className="grid grid-cols-1 items-start gap-x-6 lg:grid-cols-12">
+          <div className="col-span-1 lg:col-span-9">
             <motion.h1
               initial={reduceMotion ? false : 'hidden'}
               animate="show"
               variants={{ show: { transition: { staggerChildren: 0.14, delayChildren: 0.18 } } }}
-              className="hero-title mt-12 text-ink md:mt-16"
+              className="hero-title mt-8 text-ink md:mt-10"
             >
               <span className="block overflow-hidden pb-[0.06em]">
                 <motion.span
@@ -92,14 +92,14 @@ export function Hero() {
             initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="col-span-12 mt-10 border-l-0 border-rule lg:col-span-3 lg:mt-[14.5rem] lg:border-l lg:pl-6"
+            className="col-span-1 mt-7 border-l-0 border-rule lg:col-span-3 lg:mt-8 lg:border-l lg:pl-6"
           >
             <p className="eyebrow">Current record</p>
-            <p className="mt-3 flex items-baseline gap-1.5">
-              <span className="display text-[3.7rem] leading-none text-ink">{profile.cgpa}</span>
+            <p className="mt-2 flex items-baseline gap-1.5">
+              <span className="display text-[2.8rem] leading-none text-ink">{profile.cgpa}</span>
               <span className="text-xs text-muted">/ 10 CGPA</span>
             </p>
-            <dl className="mt-6 space-y-2.5 border-t border-rule pt-4">
+            <dl className="mt-4 space-y-2 border-t border-rule pt-3">
               {metadata.map((item) => (
                 <div key={item.label} className="flex items-baseline justify-between gap-3">
                   <dt className="text-[0.6rem] uppercase tracking-[0.14em] text-muted">{item.label}</dt>
@@ -110,17 +110,17 @@ export function Hero() {
           </motion.aside>
         </div>
 
-        <div className="mt-14 grid grid-cols-12 gap-x-6 gap-y-10 border-t border-rule pt-8 md:mt-20 md:pt-10">
+        <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-7 border-t border-rule pt-6 md:mt-10 md:grid-cols-12 md:pt-7">
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="col-span-12 md:col-span-6 lg:col-span-5"
+            className="col-span-1 md:col-span-6 lg:col-span-5"
           >
             <p className="lede max-w-[24ch] font-medium text-ink">{profile.headline}</p>
             <p className="body-copy mt-4 max-w-[42ch]">{profile.intro}</p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-5 flex flex-wrap items-center gap-3">
               <a href="#work" className="btn btn-primary group">
                 View selected work
                 <ArrowDown size={13} strokeWidth={1.6} className="transition-transform duration-300 group-hover:translate-y-0.5" />
@@ -141,7 +141,7 @@ export function Hero() {
             initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.72, ease: [0.22, 1, 0.36, 1] }}
-            className="col-span-12 md:col-span-6 md:col-start-8 md:pt-1 lg:col-span-4 lg:col-start-9"
+            className="col-span-1 md:col-span-6 md:col-start-8 md:pt-1 lg:col-span-4 lg:col-start-9"
           >
             <p className="eyebrow border-b border-rule pb-3">Elsewhere</p>
             <ul>
@@ -159,7 +159,7 @@ export function Hero() {
                         <Icon size={14} strokeWidth={1.5} aria-hidden="true" />
                         {link.label}
                       </span>
-                      <span className="flex items-center gap-2 text-[0.68rem] text-muted transition-colors group-hover:text-accent">
+                      <span className="flex min-w-0 max-w-[65%] items-center justify-end gap-2 break-all text-right text-[0.68rem] text-muted transition-colors group-hover:text-accent sm:max-w-none sm:break-normal">
                         {link.handle}
                         <ArrowUpRight size={12} strokeWidth={1.5} className="arrow" aria-hidden="true" />
                       </span>
@@ -171,7 +171,7 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <div className="mt-16 hidden items-center justify-between pb-10 md:flex" aria-hidden="true">
+        <div className="mt-8 hidden items-center justify-between pb-5 md:flex" aria-hidden="true">
           <span className="eyebrow">Portfolio / edition 01</span>
           <span className="flex items-center gap-3 text-[0.6rem] uppercase tracking-[0.18em] text-muted">
             Scroll to explore

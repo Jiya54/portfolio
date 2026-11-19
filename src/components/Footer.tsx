@@ -19,8 +19,8 @@ export function Footer() {
   return (
     <footer className="border-t border-rule bg-paper">
       <div className="shell">
-        <div className="grid grid-cols-12 gap-x-6 gap-y-12 py-14 md:py-16">
-          <div className="col-span-12 md:col-span-5">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-8 py-10 md:grid-cols-12 md:gap-y-12 md:py-16">
+          <div className="col-span-1 md:col-span-5">
             <Link
               to="/"
               onClick={goHome}
@@ -40,7 +40,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="col-span-6 md:col-span-3 md:col-start-7">
+          <div className="col-span-1 md:col-span-3 md:col-start-7">
             <p className="eyebrow border-b border-rule pb-3">Index</p>
             <ul className="mt-3">
               {navItems.map((item) => (
@@ -62,7 +62,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="col-span-6 md:col-span-3">
+          <div className="col-span-1 md:col-span-3">
             <p className="eyebrow border-b border-rule pb-3">Elsewhere</p>
             <ul className="mt-3">
               {socialLinks.map((link) => (

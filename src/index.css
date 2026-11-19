@@ -185,6 +185,10 @@
     padding-block: clamp(5rem, 10vw, 9rem);
   }
 
+  .home-section {
+    padding-block: clamp(3rem, 5vw, 5rem);
+  }
+
   .eyebrow {
     font-family: var(--sans);
     font-size: 0.65rem;
@@ -211,7 +215,7 @@
   .hero-title {
     font-family: var(--sans);
     font-weight: 600;
-    font-size: clamp(4rem, 12.2vw, 10.6rem);
+    font-size: clamp(2.3rem, 9vw, 8rem);
     line-height: 0.82;
     letter-spacing: -0.055em;
   }
