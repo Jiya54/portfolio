@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jiya Santhosh | Software Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Jiya Santhosh, Computer Science undergraduate and software developer interested in backend engineering, full-stack development, and applied AI."
+    />
+    <meta name="author" content="Jiya Santhosh" />
+    <meta name="theme-color" content="#F5F3EE" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#191A19" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jiya Santhosh" />
+    <meta property="og:title" content="Jiya Santhosh | Software Developer" />
+    <meta
+      property="og:description"
+      content="Computer Science undergraduate and software developer interested in backend engineering, full-stack development, and applied AI."
+    />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Editorial title card reading Jiya Santhosh, computer science undergraduate and software developer."
+    />
+    <meta property="og:locale" content="en_IN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jiya Santhosh | Software Developer" />
+    <meta
+      name="twitter:description"
+      content="Computer Science undergraduate and software developer interested in backend engineering, full-stack development, and applied AI."
+    />
+    <meta name="twitter:image" content="/og.png" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="preload" href="/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/dm-sans-regular.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('js-theme')
+          var dark = stored
+            ? stored === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light'
+        } catch (error) {
+          document.documentElement.dataset.theme = 'light'
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
